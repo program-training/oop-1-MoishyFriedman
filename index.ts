@@ -21,11 +21,11 @@
 //   }
 // }
 // 3. Shape - צורה
-class Shape {
-  getInfo(): string {
-    return "This is a Shape";
-  }
-}
+// class Shape {
+//   getInfo(): string {
+//     return "This is a Shape";
+//   }
+// }
 
 // class Rectangle extends Shape {
 //   width: number;
@@ -56,43 +56,64 @@ class Shape {
 //   }
 // }
 // 4. Method Chaining
-class Rectangle extends Shape {
-  width: number;
-  height: number;
+// class Rectangle extends Shape {
+//   width: number;
+//   height: number;
 
-  constructor(width: number, height: number) {
-    super();
-    this.height = height;
-    this.width = width;
+//   constructor(width: number, height: number) {
+//     super();
+//     this.height = height;
+//     this.width = width;
+//   }
+//   getArea(): number {
+//     return this.height * this.width;
+//   }
+//   GetInfo(): string {
+//     return "This is a Rectangle";
+//   }
+//   setScale(number: number): this {
+//     this.height *= number;
+//     this.width *= number;
+//     return this;
+//   }
+//   static getNewRectangle(
+//     rectangle1: Rectangle,
+//     rectangle2: Rectangle
+//   ): Rectangle {
+//     let newRectangle = new Rectangle(
+//       rectangle1.width + rectangle2.width,
+//       rectangle1.height + rectangle2.height
+//     );
+//     return newRectangle;
+//   }
+// }
+
+// let rectangle = new Rectangle(5, 5);
+// console.log(rectangle.setScale(2).setScale(2).getArea());
+// 5. Shape with draw method
+class Shape {
+  getDraw(): void {
+    console.log("drawing a shape");
   }
-  getArea(): number {
-    return this.height * this.width;
-  }
-  GetInfo(): string {
-    return "This is a Rectangle";
-  }
-  setScale(number: number): this {
-    this.height *= number;
-    this.width *= number;
-    return this;
-  }
-  static getNewRectangle(
-    rectangle1: Rectangle,
-    rectangle2: Rectangle
-  ): Rectangle {
-    let newRectangle = new Rectangle(
-      rectangle1.width + rectangle2.width,
-      rectangle1.height + rectangle2.height
-    );
-    return newRectangle;
+}
+class Triangle extends Shape {
+  getDraw(): void {
+    console.log("drawing a Triangle");
   }
 }
 
-let rectangle = new Rectangle(5, 5);
-console.log(rectangle.setScale(2).setScale(2).getArea());
-// 5. Shape with draw method
-// class Shape {
-//     getInfo(): string{
-//       return "This is a Shape";
-//     }
-//   }
+class Circle extends Shape {
+  getDraw(): void {
+    console.log("drawing a Circle");
+  }
+}
+
+class Square extends Shape {
+  getDraw(): void {
+    console.log("drawing a Square");
+  }
+}
+
+function renderShapes(array: Shape[]): void {
+  array.forEach((obj) => obj.getDraw());
+}
