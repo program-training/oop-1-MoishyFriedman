@@ -15,7 +15,11 @@ class Rectangle {
   }
 }
 //  2. Square - ריבוע
-
+class Square extends Rectangle {
+  constructor(width: number) {
+    super(width, width);
+  }
+}
 // 3. Shape - צורה
 
 // 4. Method Chaining
