@@ -21,11 +21,11 @@
 //   }
 // }
 // 3. Shape - צורה
-// class Shape {
-//   getInfo(): string{
-//     return "This is a Shape";
-//   }
-// }
+class Shape {
+  getInfo(): string {
+    return "This is a Shape";
+  }
+}
 
 // class Rectangle extends Shape {
 //   width: number;
@@ -87,4 +87,12 @@ class Rectangle extends Shape {
     return newRectangle;
   }
 }
+
+let rectangle = new Rectangle(5, 5);
+console.log(rectangle.setScale(2).setScale(2).getArea());
 // 5. Shape with draw method
+// class Shape {
+//     getInfo(): string{
+//       return "This is a Shape";
+//     }
+//   }
